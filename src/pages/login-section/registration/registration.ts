@@ -549,4 +549,94 @@ MobileNumber(event: any)
     {event.preventDefault(); }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+onUploadBank(evt: any) {
+    let actionsheet = this.actionSheetController.create({
+        title:'Upload File',
+        cssClass: 'cs-actionsheet',
+        
+        buttons:[{
+            cssClass: 'sheet-m',
+            text: 'Camera',
+            icon:'camera',
+            handler: () => {
+                console.log("Camera Clicked");
+                this.takeDocPhotoBank();
+            }
+        },
+        {
+            cssClass: 'sheet-m1',
+            text: 'Gallery',
+            icon:'image',
+            handler: () => {
+                console.log("Gallery Clicked");
+                this.getDocImagebank();
+            }
+        },
+        {
+            cssClass: 'cs-cancel',
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {
+                this.data.doc_edit_id = this.data.id;
+                console.log('Cancel clicked');
+            }
+        }
+    ]
+});
+actionsheet.present();
+}
+takeDocPhotoBank()
+{
+console.log("i am in camera function");
+const options: CameraOptions = {
+    quality: 70,
+    destinationType: this.camera.DestinationType.DATA_URL,
+    targetWidth : 500,
+    targetHeight : 400
+}
+
+console.log(options);
+this.camera.getPicture(options).then((imageData) => {
+    this.flag=false;
+    this.data.doc_edit_id='',
+    this.data.cheque_image = 'data:image/jpeg;base64,' + imageData;
+    console.log(this.data.cheque_image);
+}, (err) => {
+});
+}
+getDocImagebank()
+{
+const options: CameraOptions = {
+    quality: 70,
+    destinationType: this.camera.DestinationType.DATA_URL,
+    sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+    saveToPhotoAlbum:false
+}
+console.log(options);
+this.camera.getPicture(options).then((imageData) => {
+    this.flag=false;
+    this.data.doc_edit_id='',
+    this.data.cheque_image = 'data:image/jpeg;base64,' + imageData;
+    console.log(this.data.cheque_image);
+}, (err) => {
+});
+}
+
+
+
+
+
+
+
 }

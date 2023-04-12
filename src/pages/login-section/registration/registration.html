@@ -252,6 +252,14 @@
                         <ion-input type="text"  name="ifsc_code " #ifsc_code ="ngModel" [(ngModel)]="data.ifsc_code"  pattern="^[A-z]{4}[0][A-z0-9]{6}$" required></ion-input>
                     </ion-item>	
                     <p class="alert-line" *ngIf="ifsc_code.errors?.pattern">{{'Invaild IFSC Code'   | translate}}</p>
+
+
+
+                    <div class="upload-document" (click)="onUploadBank()">
+                        <p *ngIf="data.cheque_image==''"><i class="material-icons">add_circle</i><br>{{'Upload Document*' | translate}}</p>
+                        <img src="{{data.doc_edit_id ? uploadurl+data.cheque_image : data.cheque_image}}" *ngIf="data.cheque_image != ''">
+                        
+                    </div>
                     
                 </ion-list>
             </div>
