@@ -62,6 +62,80 @@ export class ProfilePage {
     content:any=""
     
     
+    // logout()
+    // {
+        
+    //     this.translate.get("Logout")
+    //     .subscribe(resp=>{
+    //         this.title = resp;
+    //     })
+        
+    //     this.translate.get("No")
+    //     .subscribe(resp=>{
+    //         this.no = resp;
+    //     })
+    //     this.translate.get("Yes")
+    //     .subscribe(resp=>{
+    //         this.yes = resp;
+    //     })
+    //     this.translate.get("Are you sure you want Logout?")
+    //     .subscribe(resp=>{
+    //         this.content = resp;
+    //     })
+        
+        
+    //     let alert = this.alertCtrl.create({
+    //         title: this.title,
+    //         message: this.content,
+    //         buttons: [
+    //             {
+    //                 text: this.no,
+    //                 handler: () => {
+    //                     console.log('Cancel clicked');
+    //                     this.d.('Action Cancelled!')
+    //                 }
+    //             },
+    //             {
+    //                 text: this.yes,
+    //                 handler: () => {
+                        
+    //                     this.storage.set('token','');
+    //                     this.service.karigar_info='';
+    //                     this.storage.get("token")
+    //                     .then(resp=>{
+    //                         console.log(resp);
+                            
+    //                     })
+                        
+    //                     let alert2 = this.alertCtrl.create({
+    //                         title:'Success!',
+    //                         subTitle: 'Logout Successfully',
+    //                         buttons: [ {
+    //                             text: 'Ok',
+    //                             handler: () => {
+    //                                 console.log('Cancel clicked');
+    //                             }
+    //                         }]
+    //                     });
+    //                     alert2.present();
+    //                     this.navCtrl.setRoot(LanguagePage);
+    //                     this.app.getRootNav().setRoot(LanguagePage);
+                        
+    //                 }
+    //             }
+    //         ]
+    //     })
+        
+    //     alert.present();
+        
+    // }
+    
+    
+
+
+
+
+
     logout()
     {
         
@@ -129,8 +203,11 @@ export class ProfilePage {
         alert.present();
         
     }
-    
-    
+
+
+
+
+
     
     cam:any="";
     gal:any="";

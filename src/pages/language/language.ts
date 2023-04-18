@@ -65,8 +65,7 @@ export class LanguagePage {
         .subscribe(resp=>{
             console.log(resp);
             this.inputs = resp
-            this.loading.dismiss();
-            console.log(this.inputs);
+   
         })
     }
     
