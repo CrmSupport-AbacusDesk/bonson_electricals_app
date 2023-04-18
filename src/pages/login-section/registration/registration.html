@@ -257,7 +257,7 @@
 
                     <div class="upload-document" (click)="onUploadBank()">
                         <p *ngIf="data.cheque_image==''"><i class="material-icons">add_circle</i><br>{{'Upload Document*' | translate}}</p>
-                        <img src="{{data.doc_edit_id ? uploadurl+data.cheque_image : data.cheque_image}}" *ngIf="data.cheque_image != ''">
+                        <img src="{{data.doc_edit_id ? uploadurl+data.cheque_image : data.cheque_image}}" *ngIf="data.cheque_image != ''" required>
                         
                     </div>
                     

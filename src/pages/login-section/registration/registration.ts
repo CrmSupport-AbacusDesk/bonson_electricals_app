@@ -195,6 +195,17 @@ export class RegistrationPage {
                });
                return;
             }
+
+            if(this.data.cheque_image == '')
+            {
+
+               this.translate.get("Upload Bank Image Is Required!")
+               .subscribe(resp=>{
+                   this.showAlert(resp);
+               });
+               return;
+            }
+
             this.presentLoading();
             console.log('data');
             console.log(this.data);
