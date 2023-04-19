@@ -4,6 +4,7 @@ import { DbserviceProvider } from '../../providers/dbservice/dbservice';
 import { Storage } from '@ionic/storage';
 import { TranslateService } from '@ngx-translate/core';
 import * as jwt_decode from "jwt-decode";
+import { ConstantProvider } from '../../providers/constant/constant';
 
 @IonicPage()
 @Component({
@@ -16,11 +17,15 @@ export class TermsPage {
   loading:Loading;
   tokenInfo:any={};
   lang:any='';
-  constructor(public navCtrl: NavController, public navParams: NavParams,public service:DbserviceProvider,public loadingCtrl:LoadingController,public storage:Storage,public translate:TranslateService,public db:DbserviceProvider) {
+
+  uploadUrl:any='';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public service:DbserviceProvider,public loadingCtrl:LoadingController,public storage:Storage,public translate:TranslateService,public db:DbserviceProvider,public constant:ConstantProvider) {
     
   }
   
   ionViewDidLoad() {
+    this.uploadUrl = this.constant.upload_url;
     console.log('ionViewDidLoad TermsPage');
     this.offer_id=this.navParams.get('id');
     this.getTermsDetail(this.offer_id);
