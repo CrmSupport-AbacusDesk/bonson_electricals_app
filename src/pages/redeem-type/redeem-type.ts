@@ -125,8 +125,14 @@ karigar_detail:any ={}
 
       
 
+      // else if(this.data.redeem_amount < this.cashLimit){
+      //   this.showAlert('You can not redeem below 100 points. You should have minimum 100 points to redeem');
+      //   return
+      // }
+
+
       else if(this.data.redeem_amount < this.cashLimit){
-        this.showAlert('You can not redeem below 100 points. You should have minimum 100 points to redeem');
+        this.showAlert('You can not redeem below ' +this.cashLimit+ ' points. You should have minimum ' +this.cashLimit+ ' points to redeem');
         return
       }
 
